@@ -1,0 +1,31 @@
+<view>
+  <van-cell-group>
+    <van-cell value="{{bianji?'编辑':'完成'}}" border="{{ false }}" bindtap="bianwan"/>
+  </van-cell-group>
+  <view>
+    <van-grid column-num="2" border="{{false}}">
+      <van-checkbox-group value="{{result}}" bind:change="onChange">
+        <van-grid-item use-slot wx:for='{{milkList}}' wx:key="id">
+          <van-checkbox  name="{{item.id}}" wx:if="{{!bianji}}" style="position: absolute;top: 0;left: 0;"/>
+          <image src='{{item.img}}'  mode="widthFix" style="width:100%;"/>
+          <view style="text-align: center;">
+            <view style="width: 180px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;">{{item.miaoshu}}</view>   
+            <view style="color: darkorange;">￥{{item.price}}元</view>
+          </view>
+        </van-grid-item>
+      </van-checkbox-group>
+    </van-grid>
+  </view>
+  <van-submit-bar
+    button-text="删除"
+    bind:submit="onClickButton"
+    tip="{{ true }}"
+    wx:if="{{!bianji}}"
+  >
+    <van-tag type="primary">
+      <van-checkbox value="{{checked}}" 
+      bindtap="onChanges" 
+      style="position: absolute;left: 20px;top: 18px;">全选</van-checkbox>
+    </van-tag>
+  </van-submit-bar>
+</view>

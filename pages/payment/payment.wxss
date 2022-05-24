@@ -1,0 +1,30 @@
+.zf{
+  width: 96%;
+  height: 70px;
+  margin: 10px 2% 10px 2%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.van-icon-wechat{
+  color:green;
+}
+.van-icon-alipay , .van-icon-location{
+  color: blue;
+}
+.van-icon-card{
+  color: red;
+}
+.van-radio__icon-wrap{
+  position: relative;
+  left: 110px;
+}
+.bgc{
+  background-color: #2b4b6b !important;
+
+}
+.col{
+  color: #fff !important;
+}

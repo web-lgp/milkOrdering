@@ -1,0 +1,32 @@
+/**app.wxss**/
+.top{
+  width: 100%;
+  height: 15vh;
+  background-color:#ddeafa;
+  display: flex;
+  flex-direction: column;
+}
+.onebox{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.onebox image{
+  border-radius: 35px;
+  z-index:1;
+  margin-top: 5px;
+}
+.top_bot{
+  display: flex;
+  background-color: #ddeafa;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+}
+.prices{
+  color: coral !important;
+}

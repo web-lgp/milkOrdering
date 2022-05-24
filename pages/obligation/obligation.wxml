@@ -1,0 +1,28 @@
+<view>
+  <view class="top">●待付款</view>
+  <view class="main">
+    <van-cell title="订单类型" value="周期购订单"/>
+    <van-cell title="订单号" value="{{indent.indentid}}"/>
+    <view>
+      <van-cell title="{{site.consignee}} {{site.sitephone}}" size="large" border="{{false}}"/>
+      <view style="width: 92%;margin-left: 4%; font-size: 15px;color: #969799;">{{site.address+site.name}}</view>
+    </view>
+    <van-cell title="是否安装奶箱" value="{{site.ismilkbox==1?'是':'否'}}"/>
+    <van-cell title="配送方式" value="晨配(清晨7:00前)"/>
+        <van-card
+          num="{{indent.countnum*indent.daynum}}"
+          price="{{indent.price}}"
+          title="{{indent.miaoshu}}"
+          thumb="{{ indent.img }}"
+        >
+        <view slot="desc" style="background-color: #f7f8fa;color:#c8c8c8;margin-top: 5px;">
+          <view style="padding-left: 5px;">配送模式：{{indent.delivery==0?'天天送':''}}{{indent.delivery==1?'单号送':''}}
+            {{indent.delivery==2?'双号送':''}}{{indent.delivery==3?'三日送':''}}
+            {{indent.delivery==4?'周六送':''}}{{indent.delivery==5?'周末送':''}}</view>
+          <view style="padding-left: 5px;">配送周期：{{indent.startime}}-{{indent.endtime}}</view>
+          <view style="padding-left: 5px;">每次配送：{{indent.daynum}}</view>
+          <view style="padding-left: 5px;margin-bottom: 5px;">总数量：{{indent.countnum}}</view>
+        </view>
+        </van-card>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+.van-hairline--bottom{
+  background-color: aqua !important;
+}
+.naixiang{
+ margin-top: 10px;
+ background-color: #f7f8fa;
+ height: 40px;
+ line-height: 40px;
+ display: flex;
+ justify-content: space-between;
+}
+.van-radio-group--horizontal{
+  margin-top: 10px;
+}
+.spxq{
+  text-indent: 0.5em;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-top: -2px;
+  font-size: 15px;
+  color: darkgray;
+  margin-bottom: 10px;
+}
+.spxq view{
+  margin-top: 5px;
+}
+.spxq view:nth-child(1){
+  margin-top: 0px;
+}

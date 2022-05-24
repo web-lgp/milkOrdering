@@ -1,0 +1,32 @@
+<view class="top">
+  <view class="onebox">
+    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1">
+      <image src="http://124.223.161.204:8081/file/{{img}}" style="width: 50px;height: 50px;"/>
+    </van-uploader>
+    <view style="margin-left: 10px;">{{user}}</view>
+  </view>
+  <view class="top_bot">
+    <view>用户数：{{count}}</view>
+    <view>商品数：{{count2}}</view>
+    <view>总收益：{{sum}}</view>
+    <view>管理员：{{count3}}</view>
+  </view>
+</view>
+<view>
+  <van-cell is-link title="地区销售分析" link-type="navigateTo" url="/pages/store/address/index"/>
+  <van-cell title="配送模式分析" is-link link-type="navigateTo" url="/pages/store/yuefx/index"/>
+  <van-cell title="订单情况分析" is-link link-type="navigateTo" url="/pages/store/indent/index"/>
+</view>
+<view>
+  <van-card
+    wx:for="{{list}}"
+    wx:key="{{index}}"
+    price="{{item.price}}"
+    desc="{{item.miaoshu}}"
+    title="商品标题"
+    thumb="{{item.img}}"
+    tag='{{tag+(index+1)}}'
+    price-class="prices"
+  />
+</view>
+

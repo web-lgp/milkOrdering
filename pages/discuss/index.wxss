@@ -1,0 +1,8 @@
+.viewpj{
+ margin-left: 1rem !important;
+}
+.zhuanfa{
+  position: absolute;
+  top: 13px;
+  left: 85vw;
+}

@@ -1,0 +1,35 @@
+<view>
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入商品关键词"
+    use-action-slot
+    bind:change="onChange"
+    shape="round">
+    <view slot="action" bind:tap="onClick">搜索</view>
+  </van-search>
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onSwitchChange"/>
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onSwitchChange2"/>
+  </van-dropdown-menu>
+
+  <view>
+    <van-grid column-num="2" border="{{false}}">
+        <van-grid-item use-slot wx:for='{{likeMiaoshu}}' wx:key="id" bindtap="todetails"
+          data-id="{{item.id}}">
+            <image src='{{item.img}}'  mode="widthFix" style="width:90%;"/>
+              <view style="text-align: center;">
+                <view style="width: 180px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;font-size: 10px;">{{item.miaoshu}}
+                </view>   
+                <view style="color: coral;">￥{{item.price}}元</view>
+              </view>
+        </van-grid-item>
+      </van-grid>
+  </view>
+  <van-empty
+    wx:if="{{!likeMiaoshu}}"
+    class="custom-image"
+    image="https://wimg.588ku.com/gif620/20/03/15/ee50f058e3be92437eb7f009728df4d8.gif"
+    description="请正确搜索关键字"
+    style="position: absolute;top: 30%;left: 20%;"
+  />
+</view>

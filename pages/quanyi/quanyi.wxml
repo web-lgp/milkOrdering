@@ -1,0 +1,17 @@
+<van-tabs animated active="{{ active }}">
+  <van-tab title="优惠劵">
+    <view>
+      
+    </view>
+  </van-tab>
+  <van-tab title="消费积分">
+    <view style="width: 90%;margin-left: 5%;font-size: 15px;font-weight: 600;margin-top:1rem;">
+      当您消费时，您可获得积分奖励，消费1元可获得1积分
+    </view>
+  </van-tab>
+  <van-tab title="积分抵现">
+    <view style="width: 90%;margin-left: 5%;font-size: 15px;font-weight: 600;margin-top:1rem;">
+      您获得的积分可以用于抵扣支付费用，100积分=1元，每笔订单最多可抵扣20元，积分只能以100的倍数使用，最小使用额度为100积分
+    </view>
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,50 @@
+.van-cell{
+  position: absolute;
+  left: -16px;
+  color: #000 !important  ;
+}
+.van-cell__value{
+  position: relative;
+  left: 35px;
+  color: orangered !important;
+}
+.moshi{
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.moshi view{
+  box-sizing: border-box;
+  text-align: center;
+  width: 30%;
+  height: 5vh;
+  line-height: 5vh;
+  background-color: aliceblue;
+  margin: 0.5rem 0 0 0;
+}
+.moshi view:nth-child(4),
+.moshi view:nth-child(5),
+.moshi view:nth-child(6){
+  margin-bottom: 0.5rem;
+}
+.border{
+  color: red;
+  border: 1px solid red;
+}
+.pingjia{
+  position: relative;
+}
+.pingjia .van-cell__value{
+  /* position: relative;
+  left: -20px; */
+  color: orangered !important;
+}
+.pingjia .van-cell{
+  color: #000 !important  ;
+}
+.pingjia .cell-index--van-cell__right-icon{
+  position: relative;
+  left: 2rem;
+}

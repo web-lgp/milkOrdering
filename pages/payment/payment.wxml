@@ -1,0 +1,26 @@
+<van-nav-bar
+  title="收银台"
+  left-arrow
+  bind:click-left="onClickLeft"
+  custom-class="bgc"
+  title-class="col"
+/>
+<view style="background-color: rgb(245, 248, 248);height: 100vh;">
+  <view class="zf">
+    <view style="font-size: 13px;">订单支付金额</view>
+    <view style="margin-top: 5px;color: orangered;">￥{{price}}</view>
+  </view>
+  <view style="width: 96%;margin-left: 2%;">
+    <view style="font-size: 13px;margin-bottom: 10px;">选择支付方式</view>
+    <van-radio-group value="{{ radio2 }}" bind:change="onChange2">
+        <van-cell title="微信支付" icon="wechat"><van-radio name="1"/></van-cell>
+        <van-cell title="支付宝支付" icon="alipay"><van-radio name="2"/></van-cell>
+        <van-cell title="零钱支付" icon="card"><van-radio name="3"/></van-cell>
+    </van-radio-group>
+  </view>
+  <van-submit-bar
+    price="{{ price*100}}"
+    button-text="提交订单"
+    bind:submit="onSubmit"
+  />
+</view>

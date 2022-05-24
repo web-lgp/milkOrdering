@@ -1,0 +1,11 @@
+.van-button--block{
+  margin-top: 20px;
+}
+.van-tabs__wrap{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.slotbtn{
+  width: 30vw !important;
+  color: #fff !important;
+}

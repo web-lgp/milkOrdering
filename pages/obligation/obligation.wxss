@@ -1,0 +1,11 @@
+.top{
+  width: 90%;
+  height: 30px;
+  margin-left: 5%;
+  color: #fff;
+  line-height: 30px;
+  background-color: orange;
+}
+.van-cell-label{
+  width: 70vw !important;
+}

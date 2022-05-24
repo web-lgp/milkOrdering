@@ -1,0 +1,3 @@
+.submit-bar-index--van-submit-bar__button{
+  background-color: chartreuse !important;
+}

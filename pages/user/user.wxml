@@ -1,0 +1,61 @@
+<view>
+  <view style="margin-top: 50%;transform: translateY(-20%);" wx:if="{{!userName}}">
+    <van-empty  image="/pages/imgs/weidenglu.png"
+    description="您还未注册/登录">
+      <van-button 
+      plain type="info"
+      class="bottom-button"
+      bindclick="getlogin">
+      <van-icon name="wechat" color="#4fc08d" />登陆/注册</van-button>
+    </van-empty>
+  </view>
+  <view wx:else="{{!userName}}"  style="height: 100vh;">
+    <view class="mytop">
+      <view class="viewimg">
+        <view>
+          <image src="http://124.223.161.204:8081/file/{{touxiang}}"></image>
+        </view>
+        <text>{{userName}}</text>
+      </view>
+    </view>
+    <view style="margin-top: 2vh;margin-bottom: 1vh;">
+      <van-grid column-num="3" border="{{ false }}">
+        <van-grid-item icon="/pages/imgs/youhuijuan.png" text="优惠劵" link-type="navigateTo" url="/pages/quanyi/quanyi?index=0"/>
+        <van-grid-item icon="/pages/imgs/xiaofeijifen.png" text="消费积分" link-type="navigateTo" url="/pages/quanyi/quanyi?index=1"/>
+        <van-grid-item icon="/pages/imgs/hongbao.png" text="积分抵现" link-type="navigateTo" url="/pages/quanyi/quanyi?index=2"/>
+      </van-grid>
+    </view>
+    <view >
+      <van-cell  is-link>
+        <view slot="title">
+          <van-icon name="vip-card" class="custom-icon" color="orangered"/> 超级会员
+        </view>
+      </van-cell>
+      <van-cell  is-link  link-type="navigateTo" url="/pages/site/site">
+        <view slot="title">
+          <van-icon name="location" class="custom-icon" color="#1989fa"/> 收货地址
+        </view>
+      </van-cell>
+      <van-cell  is-link link-type="navigateTo" url="/pages/footmark/footmark">
+        <view slot="title">
+          <van-icon name="underway" class="custom-icon" color="#fca318"/> 我的足迹
+        </view>
+      </van-cell>
+      <van-cell  is-link link-type="navigateTo" url="/pages/updatpwd/updatepwd">
+        <view slot="title">
+          <van-icon name="edit" color="red" class="custom-icon"/> 修改密码
+        </view>
+      </van-cell>
+      <van-cell  is-link bindtap="rexianfuwu">
+        <view slot="title">
+          <van-icon name="phone-circle" color="#7ca3ce" class="custom-icon"/> 热线服务
+        </view>
+      </van-cell>
+      <van-cell  is-link link-type="navigateTo" url="/pages/setup/setup">
+        <view slot="title">
+          <van-icon name="setting" color="block" /> 更多设置
+        </view>
+      </van-cell>
+    </view>
+  </view>
+</view>

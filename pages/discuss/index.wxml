@@ -1,0 +1,56 @@
+<view>
+  <van-tabs animated active="{{ active }}"  bind:change="onChange" color="#2b4b6b">
+  <van-tab title="全部评价">
+    <view>
+      <view  wx:for="{{evaluates}}" wx:key="id" style="margin-bottom: 10px;position: relative;font-size: 12px;">
+        <view style="width:50px;height: 50px;">
+          <image src="http://124.223.161.204:8081/file/{{item.img}}" style="width: 100%;height: 100%;border-radius:50%;"/>
+        </view>
+        <view style="position: absolute;top: 13px;left: 60px;">{{item.phone}}</view>
+          <view class="viewpj">描述相符：<van-rate disabled disabled-color="#ffd21e" value="{{ item.describes }}"/></view>
+          <view class="viewpj">配送服务：<van-rate disabled disabled-color="#ffd21e" value="{{ item.delivery }}"/></view>
+          <view class="viewpj">服务态度：<van-rate disabled disabled-color="#ffd21e" value="{{ item.serve }}"/></view>
+          <view class="viewpj" style="margin-top:10px;margin-left:1rem;">评价：{{item.message}}</view>
+          <view class="zhuanfa" bindtap="onClick"><van-icon name="share-o" />分享</view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="商品好评">
+    <view>
+      <view  wx:for="{{evaluates}}" wx:key="id" style="margin-bottom: 10px;position: relative;font-size: 12px;">
+        <view style="width:50px;height: 50px;">
+          <image src="http://124.223.161.204:8081/file/{{item.img}}" style="width: 100%;height: 100%;border-radius:50%;"/>
+        </view>
+        <view style="position: absolute;top: 13px;left: 60px;">{{item.phone}}</view>
+          <view class="viewpj">描述相符：<van-rate disabled disabled-color="#ffd21e" value="{{ item.describes }}"/></view>
+          <view class="viewpj">配送服务：<van-rate disabled disabled-color="#ffd21e" value="{{ item.delivery }}"/></view>
+          <view class="viewpj">服务态度：<van-rate disabled disabled-color="#ffd21e" value="{{ item.serve }}"/></view>
+          <view class="viewpj" style="margin-top:10px;margin-left:1rem;">评价：{{item.message}}</view>
+          <view class="zhuanfa" bindtap="onClick"><van-icon name="share-o" />分享</view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="商品差评">
+    <view>
+      <view  wx:for="{{evaluates}}" wx:key="id" style="margin-bottom: 10px;position: relative;font-size: 12px;">
+        <view style="width:50px;height: 50px;">
+          <image src="http://124.223.161.204:8081/file/{{item.img}}" style="width: 100%;height: 100%;border-radius:50%;"/>
+        </view>
+        <view style="position: absolute;top: 13px;left: 60px;">{{item.phone}}</view>
+          <view class="viewpj">描述相符：<van-rate disabled disabled-color="#ffd21e" value="{{ item.describes }}"/></view>
+          <view class="viewpj">配送服务：<van-rate disabled disabled-color="#ffd21e" value="{{ item.delivery }}"/></view>
+          <view class="viewpj">服务态度：<van-rate disabled disabled-color="#ffd21e" value="{{ item.serve }}"/></view>
+          <view class="viewpj" style="margin-top:10px;margin-left:1rem;">评价：{{item.message}}</view>
+          <view class="zhuanfa" bindtap="onClick"><van-icon name="share-o" />分享</view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+</view>
+  <van-share-sheet
+    show="{{ showShare }}"
+    title="立即分享给好友"
+    options="{{ options }}"
+    bind:select="onSelect"
+    bind:close="onClose"
+  />

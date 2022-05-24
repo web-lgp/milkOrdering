@@ -1,0 +1,30 @@
+.score{
+  width: 96%;
+  height:100px;
+  margin: 15px 2% 0 2%;
+  background-color: #fff;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.score view{
+  margin-left: 9px;
+}
+.foot{
+  width: 96%;
+  margin-left: 2%;
+  height: 50px;
+  background-color: #698bb8;
+  position: fixed;
+  bottom: 4%;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+}
+.xing{
+  display: inline-block;
+  margin-left: 15px;
+  color: #ee0a24;
+  margin-top: -7px;
+}

@@ -1,0 +1,45 @@
+<view style="height: 100vh; background-color: #f8f8f8;padding-top: 15px;">
+  <view style="width: 96%;margin-left: 2%;background-color: #fff;">
+    <view style="display: flex;">
+      <image src="{{indent.img}}" style="width: 100px;height: 100px;"></image>
+      <view style="font-size: 13px;display: flex;flex-direction: column;justify-content: space-evenly;">
+        <view>{{indent.miaoshu}}</view>
+        <view>配送模式：{{texts}}</view>
+        <view>配送周期：{{indent.startime}}-{{indent.endtime}}</view>
+        <view>商品属性：{{indent.specification}}</view>
+      </view>
+    </view>
+    <view style="margin-top: 10px;margin-bottom: 10px;font-size: 13px;margin-left: 10px;">
+      描述相符 <van-rate value="{{ value }}" bind:change="onChange" style="margin-left: 30px;"/>
+              <view class="xing">{{xing}}</view>
+    </view>
+    <view>
+      <van-cell-group>
+        <van-field
+          value="{{ message }}"
+          label="评价:"
+          type="textarea"
+          placeholder="请输入留言"
+          autosize
+          border="{{ false }}"
+          maxlength="{{200}}"
+          show-word-limit="{{true}}"
+          bind:change="onMessage"
+        />
+      </van-cell-group>
+    </view>
+    <van-cell value="是否匿名评论">
+      <view slot="title">
+        <van-checkbox value="{{ checked }}" bind:change="onChecked">是</van-checkbox>
+      </view>
+    </van-cell>
+  </view>
+  <view class="score">
+    <view>订单号：{{indent.indentid}}</view>
+    <view>配送服务：<van-rate value="{{ value2 }}" bind:change="onChange2" style="margin-left: -4px;"/>
+      <view class="xing">{{xing2}}</view></view>
+    <view>服务态度：<van-rate value="{{ value3 }}" bind:change="onChange3" style="margin-left: -4px;"/>
+      <view class="xing">{{xing3}}</view></view>
+  </view>
+  <view class="foot" bindtap="fabu">发布</view>
+</view>

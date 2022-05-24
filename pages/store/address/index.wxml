@@ -1,0 +1,8 @@
+<view class="container">
+  <ec-canvas  id="mychart1"  ec="{{ ec }}" style="width: 750rpx; height: 918rpx; display: block; box-sizing: border-box"></ec-canvas>
+</view>
+<view class="paiming">
+  <van-cell title="{{list[0][1]}}" icon="/pages/imgs/paiming_diyiming.png" value="销售总额：{{list[0][0]}}"/>
+  <van-cell title="{{list[1][1]}}" icon="/pages/imgs/paimingdier.png" value="销售总额：{{list[1][0]}}"/>
+  <van-cell title="{{list[2][1]}}" icon="/pages/imgs/paiming_disanming.png" value="销售总额：{{list[2][0]}}"/>
+</view>

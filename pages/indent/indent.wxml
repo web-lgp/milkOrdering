@@ -1,0 +1,138 @@
+<view style="height: 100%;background-color: #f8f8f8;">
+  <van-tabs swipeable bind:change="onChange" active="{{ active }}" color="#2b4b6b">
+    <van-tab title="待付款">
+      <view wx:for="{{indents}}" wx:key="id" style="margin-top: 5px;" wx:if="{{i==1}}">
+        <van-cell title="订单号：{{item.indentid}}" value="待付款"/>
+        <van-card
+          num="{{item.countnum*item.daynum}}"
+          price="{{item.price}}"
+          title="{{item.miaoshu}}"
+          thumb="{{ item.img }}"
+        >
+        <view slot="desc" style="background-color: #f7f8fa;color:#c8c8c8;margin-top: 5px;">
+          <view style="padding-left: 5px;">配送模式：{{item.delivery==0?'天天送':''}}{{item.delivery==1?'单号送':''}}
+            {{item.delivery==2?'双号送':''}}{{item.delivery==3?'三日送':''}}
+            {{item.delivery==4?'周六送':''}}{{item.delivery==5?'周末送':''}}</view>
+          <view style="padding-left: 5px;">配送周期：{{item.startime}}-{{item.endtime}}</view>
+          <view style="padding-left: 5px;">每次配送：{{item.daynum}}</view>
+          <view style="padding-left: 5px;margin-bottom: 5px;">总数量：{{item.countnum}}</view>
+        </view>
+        </van-card>
+        <view style="height: auto;background-color: #fff;">
+          <view class="fukuan">实付款:<text style="color: coral;font-size: 15px;">￥{{(item.daynum*item.countnum*item.price)}}</text></view>
+          <view class="bots">
+            <button bindtap="toObligation" data-id="{{item.indentid}}">查看详情</button>
+            <button bindtap="delindent" data-id="{{item.indentid}}">取消订单</button>
+            <button bindtap="zhifu" data-state="{{item.indentid}}" data-price="{{item.daynum*item.countnum*item.price}}"
+            data-indentsite="{{item.indentsite}}">支付</button>
+          </view>
+        </view>
+      </view>
+      <van-empty
+        wx:if="{{i==1 && indents.length==0 && phone!=null}}"
+        class="custom-image"
+        image="/pages/imgs/lgp.jpg"
+        description="暂无相关订单"
+        style="position: absolute;top: 25%;left: 25%;"
+      />
+    </van-tab>
+    <van-tab title="进行中">
+      <view wx:for="{{indents}}" wx:key="id" style="margin-top: 5px;" wx:if="{{i==2}}">
+        <van-card
+          price="{{item.daynum*item.countnum*item.price}}"
+          title="{{item.miaoshu}}"
+          thumb="{{ item.img }}"
+        >
+        <view slot="desc" style="background-color: #f7f8fa;color:#c8c8c8;margin-top: 5px;">
+          <view style="padding-left: 5px;">配送模式：{{item.delivery==0?'天天送':''}}{{item.delivery==1?'单号送':''}}
+            {{item.delivery==2?'双号送':''}}{{item.delivery==3?'三日送':''}}
+            {{item.delivery==4?'周六送':''}}{{item.delivery==5?'周末送':''}}</view>
+          <view style="padding-left: 5px;">配送周期：{{item.startime}}-{{item.endtime}}</view>
+          <view style="padding-left: 5px;">每次配送：{{item.daynum}}</view>
+          <view style="padding-left: 5px;margin-bottom: 5px;">总数量：{{item.countnum}}</view>
+        </view>
+        </van-card>
+        <view class="jingxing">
+          <view class="bot">
+            <button bindtap="zhifu2" data-state="{{item.indentid}}">确认收货</button>
+          </view>
+        </view>
+      </view>
+      <van-empty
+        wx:if="{{i==2 && indents.length==0 && phone!=null}}"
+        class="custom-image"
+        image="/pages/imgs/lgp.jpg"
+        description="暂无相关订单"
+        style="position: absolute;top: 25%;left: 25%;"
+      />
+    </van-tab>
+    <van-tab title="待评价">
+      <view wx:for="{{indents}}" wx:key="id" style="margin-top: 5px;" wx:if="{{i==3}}">
+        <van-card
+          price="{{item.daynum*item.countnum*item.price}}"
+          title="{{item.miaoshu}}"
+          thumb="{{ item.img }}"
+        >
+        <view slot="desc" style="background-color: #f7f8fa;color:#c8c8c8;margin-top: 5px;">
+          <view style="padding-left: 5px;">配送模式：{{item.delivery==0?'天天送':''}}{{item.delivery==1?'单号送':''}}
+            {{item.delivery==2?'双号送':''}}{{item.delivery==3?'三日送':''}}
+            {{item.delivery==4?'周六送':''}}{{item.delivery==5?'周末送':''}}</view>
+          <view style="padding-left: 5px;">配送周期：{{item.startime}}-{{item.endtime}}</view>
+          <view style="padding-left: 5px;">每次配送：{{item.daynum}}</view>
+          <view style="padding-left: 5px;margin-bottom: 5px;">总数量：{{item.countnum}}</view>
+        </view>
+        </van-card>
+        <view class="jingxing">
+          <view class="bot3">
+            <view bindtap="zhifu3" data-state="{{item.id}}">再来一单</view>
+            <view bindtap="zhifu4" data-id="{{item.indentid}}">待评价</view>
+          </view>
+        </view>
+      </view>
+      <van-empty
+        wx:if="{{i==3 && indents.length==0  && phone!=null}}"
+        class="custom-image"
+        image="/pages/imgs/lgp.jpg"
+        description="暂无相关订单"
+        style="position: absolute;top: 25%;left: 25%;"
+      />
+    </van-tab>
+    <van-tab title="已完成">
+      <view wx:for="{{indents}}" wx:key="id" style="margin-top: 5px;" wx:if="{{i==4}}">
+        <van-card
+          price="{{item.daynum*item.countnum*item.price}}"
+          title="{{item.miaoshu}}"
+          thumb="{{ item.img }}"
+        >
+        <view slot="desc" style="background-color: #f7f8fa;color:#c8c8c8;margin-top: 5px;">
+          <view style="padding-left: 5px;">配送模式：{{item.delivery==0?'天天送':''}}{{item.delivery==1?'单号送':''}}
+            {{item.delivery==2?'双号送':''}}{{item.delivery==3?'三日送':''}}
+            {{item.delivery==4?'周六送':''}}{{item.delivery==5?'周末送':''}}</view>
+          <view style="padding-left: 5px;">配送周期：{{item.startime}}-{{item.endtime}}</view>
+          <view style="padding-left: 5px;">每次配送：{{item.daynum}}</view>
+          <view style="padding-left: 5px;margin-bottom: 5px;">总数量：{{item.countnum}}</view>
+        </view>
+        </van-card>
+      </view>
+      <van-empty
+        wx:if="{{i==4 && indents.length==0  && phone!=null}}"
+        class="custom-image"
+        image="/pages/imgs/lgp.jpg"
+        description="暂无相关订单"
+        style="position: absolute;top: 25%;left: 25%;"
+      />
+    </van-tab>
+  </van-tabs>
+  <view wx:if="{{!phone}}" style="position: absolute;top: 30%;left: 25%;">
+    <van-empty description="用户未登录" />
+    <view style="color: deepskyblue;text-align: center;margin-top: -50px;" bindtap="tologin">去登录</view>
+  </view>
+
+  <van-share-sheet
+    show="{{ showShare }}"
+    title="立即分享给好友"
+    options="{{ options }}"
+    bind:select="onSelect"
+    bind:close="onClose"
+  />
+</view>

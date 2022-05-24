@@ -1,0 +1,60 @@
+
+.container{
+  background-color: #f3f3f3;
+  height: 100%;
+  overflow-y: scroll;
+}
+.site{
+  height: 30px;
+  font-size: 10px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.cell-left{
+width: 200px;
+white-space: nowrap;
+ text-overflow:ellipsis;
+ overflow: hidden;
+ z-index: 999;
+}
+.homegrid{
+  width: 96%;
+  margin: 2%;
+}
+.gridtext{
+  font-size: 13px;
+}
+.rexiao{
+  height: 20px;
+  line-height: 20px;
+}
+.rexiao view:nth-child(1){
+  width: 200px;
+  font-size: 12px;
+  float: left;
+  margin-left: -30px;
+}
+.rexiao view:nth-child(2){
+  float: right;
+  width: 100px;
+  font-size: 15px;
+  text-align: right;
+  color: coral;
+  position: relative;
+  right: -30px;
+}
+
+.kefu{
+  position: relative;
+  background-color: #fff;
+  width: 50px;
+  height: 57px;
+  
+}
+.btntext{
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  font-size: 12px;
+  color: #292a2b;
+}

@@ -1,0 +1,13 @@
+.exit{
+  width: 96%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 2%;
+  background: #698bb8;
+  position: fixed;
+  bottom: 0%;
+}

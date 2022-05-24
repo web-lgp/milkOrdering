@@ -1,0 +1,44 @@
+.btnsite{
+  width: 96%;
+  margin-left: 2%;
+  position: fixed;
+  height: 50px;
+  bottom: 30px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  background:#698bb8;
+}
+.van-cell__label{
+  width: 92vw !important;
+}
+.van-cell__value{
+  position: absolute;
+  left: 80px;
+}
+.van-radio__icon-wrap{
+  margin-left: 10px;
+  margin-top: 6px;
+}
+.van-radio__label--right{
+  margin-top: 6px;
+  font-size: 13px;
+  margin-left: -5px;
+}
+.updel{
+  display: flex;
+  padding-bottom: 10px;
+  margin-top: 6px;
+  font-size: 15px;
+  color: darkgray;
+  margin-left: 60vw;
+  text-align: right;
+}
+.barclass{
+  background-color: #2b4b6b !important;
+  
+}
+.van-nav-bar__title,.bar-index--van-nav-bar__title,.van-ellipsis ,.bar-index--van-ellipsis{
+  color: #fff !important;
+}

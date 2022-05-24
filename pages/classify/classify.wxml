@@ -1,0 +1,26 @@
+<view>
+  <view style="display: flex;">
+    <view>
+      <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+        <van-sidebar-item title="鲜牛奶" />
+        <van-sidebar-item title="天然酸奶" />
+        <van-sidebar-item title="牛奶礼盒" />
+        <van-sidebar-item title="酸奶礼盒" />
+        <van-sidebar-item title="儿童专区" />
+        <van-sidebar-item title="优质奶粉" />
+      </van-sidebar>
+    </view> 
+    <view>
+      <van-grid column-num="2" border="{{false}}">
+        <van-grid-item use-slot wx:for='{{classify}}' wx:key="id" bindclick="todetails" data-id="{{item.id}}">
+            <image src='{{item.img}}'  mode="widthFix" style="width:90%;"/>
+              <view style="text-align: center;">
+                <view style="width: 180px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;font-size: 10px;">{{item.miaoshu}}
+                </view>   
+                <view style="color: coral;">￥{{item.price}}元</view>
+              </view>
+        </van-grid-item>
+      </van-grid>
+    </view>
+  </view>
+</view>

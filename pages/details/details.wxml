@@ -1,0 +1,74 @@
+<view>
+  <view style="width: 94%;margin-left: 3%;">
+    <swiper indicator-dots autoplay interval="3000" circular indicator-color="white" indicator-active-color="gray" style="height: 50vh;">
+    <swiper-item>
+      <image src='{{topbanner.img}}' style="width: 100%;height: 45vh;"/>
+    </swiper-item>
+    </swiper>
+    <text>{{topbanner.miaoshu}}</text>
+    <view style="display: flex;justify-content: space-between;margin: 10px 0 10px 0;">
+      <text style="color: red;font-size: 20px;">￥{{topbanner.price}}</text>
+      <text>规格:{{topbanner.specification}}</text>
+    </view>
+  </view>
+  <van-divider />
+  <view style="width: 94%;margin-left: 3%;">
+    <view>
+      <van-cell-group order="{{false}}" border="{{false}}">
+        <van-cell title="温馨提示" value="部分产品因玻璃瓶包装需要回收" title-width="17vw" border="{{false}}"/>
+        <van-cell title="商品属性"  value="{{topbanner.specification}}"/>
+      </van-cell-group>
+    </view>
+    <view style="margin-top: 0.5rem;margin-bottom: 0.5rem;">
+      <text style="font-size: 13px;">配送模式</text>
+      <view class="moshi">
+        <view wx:for="{{gridItems}}" wx:key="index" bindtap="addborder" data-index="{{index}}"
+        class="{{i==index?'border':''}}">{{item}}</view>
+      </view>
+      <text style="color: darkgrey;font-size: 12px;">{{texts}}</text>
+    </view>
+    <view>
+      <van-cell title="选择配送日期区间" value="{{ date }}" bind:click="onDisplay" />
+    </view>
+    <view wx:if="{{date}}">
+      <van-cell value="">
+        <van-stepper value="{{ bujin }}" input-width="40px" button-size="32px" bind:change="onChange" />
+        <view slot="title">
+          <view class="van-cell-text">每次配送数量</view>
+        </view>
+      </van-cell>
+      <van-cell title="总份数" value="{{bujin*count}}份"/>
+    </view>
+    <view class="pingjia">
+      <van-cell title="商品评价" value="查看全部" border="{{false}}" is-link bindtap="todiscuss"/>
+      <view  wx:for="{{evaluates}}" wx:key="id"  wx:if="{{evaluates.length!=0}}" style="margin-bottom: 10px;position: relative;font-size: 12px;">
+        <view style="width:40px;height: 40px;">
+          <image src="http://124.223.161.204:8081/file/{{item.img}}" style="width: 100%;height: 100%;border-radius:50%;"/>
+        </view>
+        <view style="position: absolute;top: 13px;left: 50px;">{{item.phone}}</view>
+          <view>描述相符：<van-rate disabled disabled-color="#ffd21e" value="{{ item.describes }}"/></view>
+          <view>配送服务：<van-rate disabled disabled-color="#ffd21e" value="{{ item.delivery }}"/></view>
+          <view>服务态度：<van-rate disabled disabled-color="#ffd21e" value="{{ item.serve }}"/></view>
+          <view style="margin-top: 10px;">评价：{{item.message}}</view>
+      </view>
+      <view wx:if="{{evaluates.length===0}}" style="height: 30px;width: 100%;text-align: center;line-height: 30px;">暂未评价</view>
+    </view>
+  </view>
+  <view style="height: 50px;"></view>
+  <view>
+      <van-submit-bar
+        price="{{ bujin*count*topbanner.price*100  }}"
+        button-text="立即购买"
+        bind:submit="onSubmit"
+      >
+    </van-submit-bar>
+    </view>
+  <van-calendar
+    show="{{ show }}"
+    type="range"
+    bind:close="onClose"
+    bind:confirm="onConfirm"
+    position="left"
+    color="#698bb8"
+  />
+</view>

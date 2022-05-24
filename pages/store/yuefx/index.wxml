@@ -1,0 +1,32 @@
+<van-dropdown-menu >
+  <van-dropdown-item value="{{ value }}" options="{{ option }}" bind:change="onChange" />
+</van-dropdown-menu>
+<view class="container" wx:if="{{value==0}}">
+  <ec-canvas  id="mychart1"  ec="{{ ec }}" style="width: 750rpx; height: 918rpx; display: block; box-sizing: border-box"></ec-canvas>
+</view>
+<view class="container" wx:if="{{!show && value==1 }}">
+  <ec-canvas  id="mychart2"  ec="{{ ec }}"></ec-canvas>
+</view>
+<view class="container3" wx:if="{{value==2}}">
+  <ec-canvas  id="mychart3"  ec="{{ec}}"></ec-canvas>
+</view>
+<view class="miaoshu">
+  <view wx:if="{{value==0 || value==1}}">
+    <view wx:if="{{value==1}}" style="text-align: center;margin-top: 10%;">当前选择年份：{{time}}</view>
+    <van-cell title="{{arr[0][0]}}" value="此配送模式：{{arr[0][1]}}单" />
+    <van-cell title="{{arr[1][0]}}" value="此配送模式：{{arr[1][1]}}单"/>
+    <van-cell title="{{arr[2][0]}}" value="此配送模式：{{arr[2][1]}}单"/>
+    <van-cell title="{{arr[3][0]}}" value="此配送模式：{{arr[3][1]}}单"/>
+    <van-cell title="{{arr[4][0]}}" value="此配送模式：{{arr[4][1]}}单"/>
+    <van-cell title="{{arr[5][0]}}" value="此配送模式：{{arr[5][1]}}单"/>
+  </view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 50%;">
+  <van-datetime-picker
+  type="year-month"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  bind:confirm="confirm"
+  bind:cancel="cancel"
+  />
+</van-popup>

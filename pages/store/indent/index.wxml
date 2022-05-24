@@ -1,0 +1,16 @@
+<van-dropdown-menu >
+  <van-dropdown-item value="{{ value }}" options="{{ option }}" bind:change="onChange" />
+</van-dropdown-menu>
+<view class="container" wx:if="{{value==0}}">
+  <ec-canvas  id="mychart1"  ec="{{ ec }}" style="width: 750rpx; height: 918rpx; display: block; box-sizing: border-box"></ec-canvas>
+</view>
+<view class="container" wx:if="{{value==1}}">
+  <ec-canvas  id="mychart2"  ec="{{ ec }}" style="width: 750rpx; height: 918rpx; display: block; box-sizing: border-box"></ec-canvas>
+</view>
+<view class="btm" wx:if="{{value==0}}">
+  <van-cell title="{{list[0][1]}}" icon="/pages/imgs/daifukuan.png"  value="待付款数：{{list[0][0]}}"/>
+  <van-cell title="{{list[1][1]}}" icon="/pages/imgs/daishouhuo.png"  value="待收货数：{{list[1][0]}}"/>
+  <van-cell title="{{list[2][1]}}" icon="/pages/imgs/daipingjia.png" value="待评价数：{{list[2][0]}}"/>
+  <van-cell title="{{list[3][1]}}" icon="/pages/imgs/yiwancheng.png" value="已完成数：{{list[3][0]}}"/>
+  
+</view>

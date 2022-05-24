@@ -1,0 +1,21 @@
+.container {
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+ec-canvas {
+  width: 100vw;
+  height: 100vh;
+}
+.paiming{
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+}

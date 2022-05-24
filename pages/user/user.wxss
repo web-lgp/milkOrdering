@@ -1,0 +1,28 @@
+.bottom-button {
+  width: 160px;
+  height: 40px;
+}
+.mytop{
+ width: 100%;
+ height: 15vh;
+ background-color:#ddeafa;
+}
+.view img{
+  width: auto;
+  position: absolute;
+}
+.viewimg text{
+  position: relative;
+  top: -2.6rem;
+  left: 6.5rem;
+}
+.viewimg image{
+  width: 60px;
+  height: 60px;
+  border-radius: 35px;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+}
+.van-cell__left-icon-wrap{
+  color: cornflowerblue;
+}

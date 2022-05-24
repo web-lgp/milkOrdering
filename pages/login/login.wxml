@@ -1,0 +1,88 @@
+<view>
+  <van-tabs   active="{{ active }}" color="#2b4b6b">
+    <van-tab title="账号登录">
+    <view style="width: 96%;margin: 2%;">
+      <van-field
+          model:value="{{zhanghao}}"
+          label="账号"
+          placeholder="手机号"
+          border="{{ false }}"
+      />
+      <van-field
+      model:value="{{ zhpwd }}"
+        label="密码"
+        placeholder="请输入密码"
+        border="{{ false }}"
+        password="{{true}}"
+      />
+        <van-button block color="#698bb8"  bindclick="ondenglu">
+        确认
+      </van-button>
+    </view>
+    </van-tab>
+    <van-tab title="新用户注册">
+      <view style="width: 96%;margin: 2%;height: auto;">
+      <van-cell-group>
+        <van-field
+          model:value="{{ phone }}"
+          label="手机号"
+          placeholder="请输入手机号"
+          border="{{ false }}"
+          required="{{true}}"
+          maxlength="11"
+        />
+        <van-cell-group>
+          <van-field
+            model:value="{{ sms }}"
+            center
+            clearable
+            label="短信验证码"
+            placeholder="请输入短信验证码"
+            border="{{ false }}"
+            required="{{true}}"
+            use-button-slot
+          >
+          <van-button slot="button" size="small" color="#8fa4bf" custom-class="slotbtn" wx:if="{{timefalg}}" bindtap="onyzm">
+            {{timeTest}}
+          </van-button>
+          <van-button slot="button" size="small" type="info" custom-class="slotbtn" wx:if="{{!timefalg}}">
+            <van-count-down  time="{{ time }}" format="ss秒" bind:finish="onjieshu"/>
+          </van-button>
+          </van-field>
+        </van-cell-group>
+        <van-field
+          model:value="{{ pwd }}"
+          label="密码"
+          placeholder="请输入密码"
+          border="{{ false }}"
+          password="{{true}}"
+          required="{{true}}"
+        />
+      </van-cell-group>
+      <van-button block color="#698bb8" bindclick="onzhuce">
+        确认
+      </van-button>
+    </view>
+    </van-tab>
+    <van-tab title="管理员登录">
+      <view style="width: 96%;margin: 2%;">
+      <van-field
+          model:value="{{zhanghao}}"
+          label="管理员账号:"
+          placeholder="请输入账号"
+          border="{{ false }}"
+      />
+      <van-field
+      model:value="{{ zhpwd }}"
+        label="密码:"
+        placeholder="请输入密码"
+        border="{{ false }}"
+        password="{{true}}"
+      />
+        <van-button block color="#698bb8"  bindclick="onAndmin">
+        确认
+      </van-button>
+    </view>
+    </van-tab>
+  </van-tabs>
+</view>

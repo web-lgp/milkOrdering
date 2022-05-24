@@ -1,0 +1,38 @@
+<van-nav-bar
+  title="地址栏"
+  left-arrow
+  bind:click-left="onClickLeft"
+  custom-class="barclass"
+/>
+<view style="height: 100vh;background-color: #f8f8f8;">
+  <view style="width: 96%; margin-left: 2%;">
+      <view style="margin-top: 50%;" wx:if="{{!siteList}}">
+        <van-empty
+          class="custom-image"
+          image="/pages/imgs/dingwei.png"
+          description="您暂未添加位置信息"
+        />
+      </view>
+    <view style="padding-top: 10px;" wx:if="{{siteList}}">
+      <view style="background-color: #fff;margin-bottom: 15px;"
+        wx:for="{{siteList}}" wx:key="id" bindtap="toconfirmorder" data-siteid="{{item.id}}">
+        <van-cell  title="{{item.consignee}}" value="{{item.phone}}"
+          label="{{item.address+item.name}}">
+          <van-divider />
+        </van-cell>
+        <view>
+          <view class="updel" wx:if="{{!falg}}">
+            <view bindtap="onupsite" data-index="{{item.id}}">
+              <van-icon name="edit"/>修改
+            </view>
+            <view style="margin-left:15px;" bindtap="ondelsite" data-id="{{item.id}}">
+              <van-icon name="delete-o"/>删除
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btnsite" bindtap="addSite" wx:if="{{!falg}}">新建地址</view>
+</view>
+

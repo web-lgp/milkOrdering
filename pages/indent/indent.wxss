@@ -1,0 +1,66 @@
+.van-tab__pane{
+  height: 100vh !important;
+}
+.van-card{
+  background-color: #fff !important;
+}
+.van-cell__value{
+  color: orange !important;
+}
+.fukuan{
+  width: 100%;
+  height: 30px;
+  background-color: #fff;
+  text-align: right;
+  line-height: 30px;
+  font-size: 12px;
+  margin-left: -20px;
+}
+.bots{
+  display: flex;
+}
+.bots button{
+  width: 25%;
+  height: 25px;
+  font-size: 8px;
+  border: solid 1px #698bb8;
+  line-height: 7px;
+  margin-bottom: 5px;
+  background-color: #ddeafa !important;
+}
+.jingxing{
+  height: auto;
+  background-color: #fff;
+}
+.jingxing .van-cell__value{
+  color: red !important;
+}
+.bot{
+  width: 100%;
+  height: 35px;
+}
+.bot button{
+  width: 25%;
+  font-size: 8px;
+  border: solid 1px grey;
+  margin-bottom: -10px;
+  margin-left: 70%;
+
+}
+.bot3{
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: flex-end;
+}
+.bot3 view{
+  width: 20%;
+  font-size: 13px;
+  height: 25px;
+  line-height: 25px;
+  border: solid 1px grey;
+  background-color: #f8f8f8;
+  text-align: center;
+  border-radius: 8px;
+  margin-right: 10px;
+}

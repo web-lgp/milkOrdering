@@ -1,0 +1,48 @@
+<view style="height: 100vh;background-color: #f7f8fa;">
+  <view>
+    <van-cell 
+    center title="{{selectbyid?selectbyid.consignee:'请填写收货地址'}} {{selectbyid.sitephone}}" 
+    label="{{selectbyid?selectbyid.address+selectbyid.name:''}}" 
+    is-link 
+    bind:click="cellClick"
+    icon="location"/>
+  </view>
+  <view class="naixiang">
+    <view>
+      <text style="color: red;">*</text>需要安装奶箱
+    </view>
+   <view>
+    <van-radio-group
+      value="{{ radio }}"
+      bind:change="onChange"
+      direction="horizontal"
+    >
+      <van-radio name="1">是</van-radio>
+      <van-radio name="2">否</van-radio>
+    </van-radio-group>
+   </view>
+  </view>
+  <view class="main" style="margin-top: 10px;">
+    <van-card
+      num="{{(countNum * dayNum)}}"
+      price="{{milk.price}}"
+      desc="{{milk.miaoshu}}"
+      title="商品标题"
+      thumb="{{ milk.img }}"/>
+      <view class="spxq">
+        <view>配送模式：{{dvery}}</view>
+        <view>配送周期：{{starTime}}-{{endTime}}</view>
+        <view>每次配送：{{dayNum}}份</view>
+        <view>总数量：{{countNum * dayNum}}份</view>
+      </view>
+      <van-cell title="配送方式" value="晨配(清晨7:00前)"/>
+      <van-cell title="商品总额" value="￥{{countNum * dayNum * milk.price}}"/>
+  </view>
+  <van-dialog id="van-dialog" />
+  <van-submit-bar
+    price="{{ countNum * dayNum * milk.price * 100 }}"
+    button-text="提交订单"
+    bind:submit="onSubmit"
+    data-price="{{ countNum * dayNum * milk.price}}"
+  />
+</view>

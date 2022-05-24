@@ -1,0 +1,48 @@
+<view>
+  <van-cell title="头像" is-link custom-class="top1" center >
+    <van-uploader 
+      bind:after-read="afterRead" 
+      max-count="1" 
+      file-list="{{fileList}}">
+      <image src="http://124.223.161.204:8081/file/{{touxiang}}" style="width: 50px;height: 50px;"/>
+    </van-uploader>
+  </van-cell>
+  <van-cell title="用户名" value="{{userName}}" />
+  <van-cell title="性别" value="{{sex}}" is-link bindtap="onSex"/>
+  <van-cell title="婚姻状况" value="{{hunyin}}" is-link bindtap="onHunyin"/>
+  <view class="exit" bindtap="exitUser">退出登录</view>
+</view>
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="onClose" 
+ >
+  <van-picker
+    columns="{{ columns }}"
+    default-index="{{ index }}"
+    confirm-button-text="确认"
+    cancel-button-text="取消"
+    show-toolbar
+    title="标题"
+    bind:cancel="onCancel"
+    bind:confirm="onConfirm"
+  />
+</van-popup>
+<van-popup
+  show="{{ show2 }}"
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="onClose2" 
+ >
+  <van-picker
+    columns="{{ columns2 }}"
+    default-index="{{ index2 }}"
+    confirm-button-text="确认"
+    cancel-button-text="取消"
+    show-toolbar
+    title="标题"
+    bind:cancel="onCancel2"
+    bind:confirm="onConfirm2"
+  />
+</van-popup>
